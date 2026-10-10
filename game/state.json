@@ -1,7 +1,7 @@
 {
-  "foe_hp": 21,
+  "foe_hp": 6,
   "foe_max": 100,
-  "turn": 4,
+  "turn": 5,
   "kos": 0,
   "log": [
     {
@@ -31,27 +31,33 @@
       "move": "will-o-wisp",
       "damage": 6,
       "at": "2026-10-10T02:20:21.288342+00:00"
+    },
+    {
+      "turn": 5,
+      "trainer": "Yahya-github",
+      "move": "foul-play",
+      "damage": 15,
+      "at": "2026-10-10T02:20:26.363011+00:00"
     }
   ],
   "leaderboard": {
     "Yahya-github": {
       "kos": 0,
-      "damage": 79
+      "damage": 94
     }
   },
   "last_move_at": {
-    "Yahya-github": "2026-10-10T02:20:21.288342+00:00"
+    "Yahya-github": "2026-10-10T02:20:26.363011+00:00"
   },
   "last": {
     "trainer": "Yahya-github",
-    "move": "will-o-wisp",
-    "hp_before": 27,
-    "hp_after": 21,
+    "move": "foul-play",
+    "hp_before": 21,
+    "hp_after": 6,
     "ko": false,
     "lines": [
-      "SABLEYE used WILL-O-WISP!",
-      "CATERPIE was burned!",
-      "CATERPIE is hurt by its burn!"
+      "SABLEYE used FOUL PLAY!",
+      "CATERPIE's own Attack was used against it!"
     ]
   }
 }
