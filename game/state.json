@@ -1,8 +1,8 @@
 {
-  "foe_hp": 6,
+  "foe_hp": 100,
   "foe_max": 100,
-  "turn": 5,
-  "kos": 0,
+  "turn": 6,
+  "kos": 1,
   "log": [
     {
       "turn": 1,
@@ -38,26 +38,35 @@
       "move": "foul-play",
       "damage": 15,
       "at": "2026-10-10T02:20:26.363011+00:00"
+    },
+    {
+      "turn": 6,
+      "trainer": "Yahya-github",
+      "move": "foul-play",
+      "damage": 6,
+      "at": "2026-10-10T02:24:28.177984+00:00"
     }
   ],
   "leaderboard": {
     "Yahya-github": {
-      "kos": 0,
-      "damage": 94
+      "kos": 1,
+      "damage": 100
     }
   },
   "last_move_at": {
-    "Yahya-github": "2026-10-10T02:20:26.363011+00:00"
+    "Yahya-github": "2026-10-10T02:24:28.177984+00:00"
   },
   "last": {
     "trainer": "Yahya-github",
     "move": "foul-play",
-    "hp_before": 21,
-    "hp_after": 6,
-    "ko": false,
+    "hp_before": 6,
+    "hp_after": 0,
+    "ko": true,
     "lines": [
       "SABLEYE used FOUL PLAY!",
-      "CATERPIE's own Attack was used against it!"
+      "CATERPIE's own Attack was used against it!",
+      "The wild CATERPIE fainted!",
+      "@Yahya-github gets the KO!"
     ]
   }
 }

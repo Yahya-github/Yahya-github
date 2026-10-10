@@ -29,9 +29,9 @@
 ## A wild Caterpie appeared!
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/battle-dark.svg?v=5">
-  <source media="(prefers-color-scheme: light)" srcset="assets/battle-light.svg?v=5">
-  <img src="assets/battle-dark.svg?v=5" width="100%" alt="Pokémon battle: Mega Sableye against a wild Caterpie. Replays the last move a visitor played.">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/battle-dark.svg?v=6">
+  <source media="(prefers-color-scheme: light)" srcset="assets/battle-light.svg?v=6">
+  <img src="assets/battle-dark.svg?v=6" width="100%" alt="Pokémon battle: Mega Sableye against a wild Caterpie. Replays the last move a visitor played.">
 </picture>
 
 <p align="center">
@@ -50,11 +50,11 @@
 
 | Trainer | Move | Damage |
 |:--|:--|--:|
+| [@Yahya-github](https://github.com/Yahya-github) | Foul Play | 6 |
 | [@Yahya-github](https://github.com/Yahya-github) | Foul Play | 15 |
 | [@Yahya-github](https://github.com/Yahya-github) | Will-O-Wisp | 6 |
 | [@Yahya-github](https://github.com/Yahya-github) | Knock Off | 29 |
 | [@Yahya-github](https://github.com/Yahya-github) | Knock Off | 28 |
-| [@Yahya-github](https://github.com/Yahya-github) | Foul Play | 16 |
 
 </td><td valign="top">
 
@@ -62,7 +62,7 @@
 
 | Trainer | KOs | Damage |
 |:--|--:|--:|
-| [@Yahya-github](https://github.com/Yahya-github) | 0 | 94 |
+| [@Yahya-github](https://github.com/Yahya-github) | 1 | 100 |
 
 </td></tr></table>
 <!--BATTLE:END-->
