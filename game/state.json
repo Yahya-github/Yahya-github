@@ -1,7 +1,7 @@
 {
-  "foe_hp": 56,
+  "foe_hp": 27,
   "foe_max": 100,
-  "turn": 2,
+  "turn": 3,
   "kos": 0,
   "log": [
     {
@@ -17,22 +17,29 @@
       "move": "knock-off",
       "damage": 28,
       "at": "2026-10-10T02:13:04.694781+00:00"
+    },
+    {
+      "turn": 3,
+      "trainer": "Yahya-github",
+      "move": "knock-off",
+      "damage": 29,
+      "at": "2026-10-10T02:20:15.491913+00:00"
     }
   ],
   "leaderboard": {
     "Yahya-github": {
       "kos": 0,
-      "damage": 44
+      "damage": 73
     }
   },
   "last_move_at": {
-    "Yahya-github": "2026-10-10T02:13:04.694781+00:00"
+    "Yahya-github": "2026-10-10T02:20:15.491913+00:00"
   },
   "last": {
     "trainer": "Yahya-github",
     "move": "knock-off",
-    "hp_before": 84,
-    "hp_after": 56,
+    "hp_before": 56,
+    "hp_after": 27,
     "ko": false,
     "lines": [
       "SABLEYE used KNOCK OFF!"
