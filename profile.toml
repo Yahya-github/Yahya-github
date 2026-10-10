@@ -13,7 +13,7 @@ status = "open to co-op internships"
 
 # Languages that are build/config noise, not skills. Hidden from every language list.
 [languages]
-ignore = ["CSS", "HTML", "Shell", "Batchfile", "PowerShell", "Dockerfile", "Makefile", "Procfile", "Inno Setup", "NSIS", "SCSS", "Less", "CMake"]
+ignore = ["CSS", "HTML", "Shell", "Batchfile", "PowerShell", "Dockerfile", "Makefile", "Procfile", "Inno Setup", "NSIS", "SCSS", "Less", "CMake", "GDShader"]
 top = 4
 # Team projects are forked into this account and DO count. These forks are not my work.
 exclude_repos = ["showdex", "instagrapi"]
