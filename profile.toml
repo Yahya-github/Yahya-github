@@ -1,0 +1,47 @@
+# Everything a human edits lives here. Scripts in scripts/ read it and regenerate assets/.
+login = "Yahya-github"
+linkedin = "https://linkedin.com/in/yahya-hallani"
+
+[terminal]
+host = "yahya@sablenite"
+# Static lines. Live lines (langs, streak) are inserted by scripts/render_terminal.py.
+role = "Software Eng (Co-op) @ McGill"
+now = "AI coding-agent evaluator @ Mercor"
+ability = "Magic Bounce: reflects bugs back"
+speaks = "FR · EN · AR · ES"
+status = "open to co-op internships"
+
+# Languages that are build/config noise, not skills. Hidden from every language list.
+[languages]
+ignore = ["CSS", "HTML", "Shell", "Batchfile", "PowerShell", "Dockerfile", "Makefile", "Procfile", "Inno Setup", "NSIS", "SCSS", "Less", "CMake"]
+top = 4
+# Team projects are forked into this account and DO count. These forks are not my work.
+exclude_repos = ["showdex", "instagrapi"]
+
+[[badges]]
+art = "badge-mind.png"
+type = "psychic"
+place = "Perfect score · 75/75"
+title = "Canadian Computing Competition 2026"
+lines = ["University of Waterloo's national programming", "contest. Full marks on every problem."]
+
+[[badges]]
+art = "badge-heat.png"
+type = "fire"
+place = "1st place · of 18 teams"
+title = "DIRO Hackathon 2026"
+lines = ["Université de Montréal. 18 teams from 9 CEGEPs,", "won a $2,500 team scholarship."]
+
+[[badges]]
+art = "badge-rain.png"
+type = "water"
+place = "1st place"
+title = "Intercollegiate Video Game Creation 2026"
+lines = ["Atlantis, a 2D submarine exploration game in", "Godot 4. Lead on 6 gameplay systems."]
+
+[[badges]]
+art = "badge-dynamo.png"
+type = "electric"
+place = "1st place 2025 · 2nd 2026"
+title = "Canadian Robotics Competition"
+lines = ["Programming category, as lead programmer.", "C/C++ robot firmware with PID control."]

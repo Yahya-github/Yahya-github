@@ -1,0 +1,19 @@
+{
+  "foe_hp": 100,
+  "foe_max": 100,
+  "turn": 0,
+  "kos": 0,
+  "log": [],
+  "leaderboard": {},
+  "last_move_at": {},
+  "last": {
+    "trainer": null,
+    "move": null,
+    "hp_before": 100,
+    "hp_after": 100,
+    "ko": false,
+    "lines": [
+      "A wild CATERPIE appeared!"
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+name: Contribution snake
+
+on:
+  schedule:
+    - cron: "37 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  snake:
+    runs-on: ubuntu-latest
+    steps:
+      # color_dots: 5 colours, empty cell first, then low -> high contributions.
+      - uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake-dark.svg?color_snake=#C09C48&color_dots=#161B22,#3E3354,#903048,#D83C60,#F0909C
+            dist/snake-light.svg?color_snake=#604800&color_dots=#EBEDF0,#C0A860,#78E490,#48B460,#248430
+      - uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
