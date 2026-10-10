@@ -50,6 +50,7 @@
 
 | Trainer | Move | Damage |
 |:--|:--|--:|
+| [@Yahya-github](https://github.com/Yahya-github) | Knock Off | 28 |
 | [@Yahya-github](https://github.com/Yahya-github) | Foul Play | 16 |
 
 </td><td valign="top">
@@ -58,7 +59,7 @@
 
 | Trainer | KOs | Damage |
 |:--|--:|--:|
-| [@Yahya-github](https://github.com/Yahya-github) | 0 | 16 |
+| [@Yahya-github](https://github.com/Yahya-github) | 0 | 44 |
 
 </td></tr></table>
 <!--BATTLE:END-->

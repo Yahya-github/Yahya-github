@@ -1,7 +1,7 @@
 {
-  "foe_hp": 84,
+  "foe_hp": 56,
   "foe_max": 100,
-  "turn": 1,
+  "turn": 2,
   "kos": 0,
   "log": [
     {
@@ -10,26 +10,32 @@
       "move": "foul-play",
       "damage": 16,
       "at": "2026-10-10T02:11:19.717644+00:00"
+    },
+    {
+      "turn": 2,
+      "trainer": "Yahya-github",
+      "move": "knock-off",
+      "damage": 28,
+      "at": "2026-10-10T02:13:04.694781+00:00"
     }
   ],
   "leaderboard": {
     "Yahya-github": {
       "kos": 0,
-      "damage": 16
+      "damage": 44
     }
   },
   "last_move_at": {
-    "Yahya-github": "2026-10-10T02:11:19.717644+00:00"
+    "Yahya-github": "2026-10-10T02:13:04.694781+00:00"
   },
   "last": {
     "trainer": "Yahya-github",
-    "move": "foul-play",
-    "hp_before": 100,
-    "hp_after": 84,
+    "move": "knock-off",
+    "hp_before": 84,
+    "hp_after": 56,
     "ko": false,
     "lines": [
-      "SABLEYE used FOUL PLAY!",
-      "CATERPIE's own Attack was used against it!"
+      "SABLEYE used KNOCK OFF!"
     ]
   }
 }
