@@ -30,6 +30,7 @@ jobs:
         env:
           ISSUE_TITLE: ${{ github.event.issue.title }}
           ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          REPO_OWNER: ${{ github.repository_owner }}   # owner skips the 1-minute cooldown for testing
         run: |
           set +e
           python -m scripts.battle

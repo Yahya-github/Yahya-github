@@ -29,9 +29,9 @@
 ## A wild Caterpie appeared!
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/battle-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/battle-light.svg">
-  <img src="assets/battle-dark.svg" width="100%" alt="Pokémon battle: Mega Sableye against a wild Caterpie. Replays the last move a visitor played.">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/battle-dark.svg?v=2">
+  <source media="(prefers-color-scheme: light)" srcset="assets/battle-light.svg?v=2">
+  <img src="assets/battle-dark.svg?v=2" width="100%" alt="Pokémon battle: Mega Sableye against a wild Caterpie. Replays the last move a visitor played.">
 </picture>
 
 <p align="center">

@@ -152,3 +152,19 @@ class TestApplyMove:
 
     def test_damage_roll_lowers_damage(self):
         assert self.run("foul-play", FakeRng(spread=0.85)).damage <= self.run("foul-play").damage
+
+
+def test_update_readme_cache_busts_battle_images():
+    readme = ('<source srcset="assets/battle-dark.svg"><img src="assets/battle-light.svg?v=3">\n'
+              '<!--BATTLE:START--><!--BATTLE:END-->\n<img src="assets/stats-dark.svg">')
+    s, _ = play_turn(initial_state(), "battle|foul-play", "ash", NOW, random.Random(1), rules=fixed(30))
+    out = update_readme(readme, s)
+    assert 'srcset="assets/battle-dark.svg?v=1"' in out
+    assert 'src="assets/battle-light.svg?v=1"' in out
+    assert 'src="assets/stats-dark.svg"' in out  # other images untouched
+
+
+def test_exempt_trainer_skips_cooldown():
+    s, _ = play_turn(initial_state(), "battle|foul-play", "owner", NOW, random.Random(1), rules=fixed(5))
+    play_turn(s, "battle|foul-play", "owner", NOW + timedelta(seconds=5), random.Random(1), rules=fixed(5),
+              exempt=frozenset({"owner"}))

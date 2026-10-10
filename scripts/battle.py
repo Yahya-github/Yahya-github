@@ -28,6 +28,7 @@ COOLDOWN = timedelta(seconds=60)
 LOG_SIZE = 10
 FOE_MAX_HP = 100
 TITLE_RE = re.compile(r"^battle\|([a-z-]+)$")
+BATTLE_IMG_RE = re.compile(r"(assets/battle-(?:dark|light)\.svg)(?:\?v=\d+)?")
 
 # Damage tuning: base Attack stats (Caterpie 30, Mega Sableye 85), Gen 6+ crit odds.
 CATERPIE_ATK, SABLEYE_ATK = 30, 85
@@ -114,12 +115,13 @@ def parse_title(title: str) -> Move:
 
 
 def play_turn(
-    state: dict, title: str, trainer: str, now: datetime, rng: random.Random, rules: Rules = apply_move
+    state: dict, title: str, trainer: str, now: datetime, rng: random.Random, rules: Rules = apply_move,
+    exempt: frozenset[str] = frozenset(),
 ) -> tuple[dict, str]:
-    """Return (new_state, comment). Never mutates `state`."""
+    """Return (new_state, comment). Never mutates `state`. `exempt` trainers skip the cooldown."""
     move = parse_title(title)
     last = state["last_move_at"].get(trainer)
-    if last and now - datetime.fromisoformat(last) < COOLDOWN:
+    if trainer not in exempt and last and now - datetime.fromisoformat(last) < COOLDOWN:
         raise RateLimited(f"@{trainer}, Sableye needs a minute to recover. Try again shortly.")
 
     hp_before = state["foe_hp"]
@@ -166,7 +168,8 @@ def update_readme(readme: str, state: dict) -> str:
     rows += ["", "</td></tr></table>", ""]
     head, rest = readme.split(START, 1)
     _, tail = rest.split(END, 1)
-    return head + START + "\n".join(rows) + END + tail
+    # GitHub serves README images with a 5 minute cache; a new query string per turn busts it.
+    return BATTLE_IMG_RE.sub(rf"\1?v={state['turn']}", head + START + "\n".join(rows) + END + tail)
 
 
 def load_state() -> dict:
@@ -181,7 +184,9 @@ def main() -> int:
         print("ISSUE_AUTHOR is required", file=sys.stderr)
         return 2
     try:
-        state, comment = play_turn(load_state(), title, trainer, datetime.now(timezone.utc), random.Random())
+        owner = frozenset({os.environ["REPO_OWNER"]}) if os.environ.get("REPO_OWNER") else frozenset()
+        state, comment = play_turn(load_state(), title, trainer, datetime.now(timezone.utc), random.Random(),
+                                   exempt=owner)
     except (ValueError, RateLimited) as err:
         COMMENT_PATH.write_text(str(err))
         return 1
