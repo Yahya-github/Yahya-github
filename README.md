@@ -50,7 +50,7 @@
 
 | Trainer | Move | Damage |
 |:--|:--|--:|
-| No moves yet | Be the first! | |
+| [@Yahya-github](https://github.com/Yahya-github) | Foul Play | 16 |
 
 </td><td valign="top">
 
@@ -58,7 +58,7 @@
 
 | Trainer | KOs | Damage |
 |:--|--:|--:|
-| Nobody yet | | |
+| [@Yahya-github](https://github.com/Yahya-github) | 0 | 16 |
 
 </td></tr></table>
 <!--BATTLE:END-->

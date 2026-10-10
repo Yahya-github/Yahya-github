@@ -1,19 +1,35 @@
 {
-  "foe_hp": 100,
+  "foe_hp": 84,
   "foe_max": 100,
-  "turn": 0,
+  "turn": 1,
   "kos": 0,
-  "log": [],
-  "leaderboard": {},
-  "last_move_at": {},
+  "log": [
+    {
+      "turn": 1,
+      "trainer": "Yahya-github",
+      "move": "foul-play",
+      "damage": 16,
+      "at": "2026-10-10T02:11:19.717644+00:00"
+    }
+  ],
+  "leaderboard": {
+    "Yahya-github": {
+      "kos": 0,
+      "damage": 16
+    }
+  },
+  "last_move_at": {
+    "Yahya-github": "2026-10-10T02:11:19.717644+00:00"
+  },
   "last": {
-    "trainer": null,
-    "move": null,
+    "trainer": "Yahya-github",
+    "move": "foul-play",
     "hp_before": 100,
-    "hp_after": 100,
+    "hp_after": 84,
     "ko": false,
     "lines": [
-      "A wild CATERPIE appeared!"
+      "SABLEYE used FOUL PLAY!",
+      "CATERPIE's own Attack was used against it!"
     ]
   }
 }
