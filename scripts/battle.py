@@ -114,14 +114,27 @@ def parse_title(title: str) -> Move:
     return MOVES[match.group(1)]
 
 
+def _on_cooldown(last: object, now: datetime) -> bool:
+    """True if `last` (an ISO timestamp from state) is within COOLDOWN of `now`.
+
+    A corrupt or naive timestamp must not brick the turn: unparseable means no cooldown, naive means UTC.
+    """
+    try:
+        then = datetime.fromisoformat(last)  # type: ignore[arg-type]
+    except (TypeError, ValueError):
+        return False
+    if then.tzinfo is None:
+        then = then.replace(tzinfo=timezone.utc)
+    return now - then < COOLDOWN
+
+
 def play_turn(
     state: dict, title: str, trainer: str, now: datetime, rng: random.Random, rules: Rules = apply_move,
     exempt: frozenset[str] = frozenset(),
 ) -> tuple[dict, str]:
     """Return (new_state, comment). Never mutates `state`. `exempt` trainers skip the cooldown."""
     move = parse_title(title)
-    last = state["last_move_at"].get(trainer)
-    if trainer not in exempt and last and now - datetime.fromisoformat(last) < COOLDOWN:
+    if trainer not in exempt and _on_cooldown(state["last_move_at"].get(trainer), now):
         raise RateLimited(f"@{trainer}, Sableye needs a minute to recover. Try again shortly.")
 
     hp_before = state["foe_hp"]

@@ -164,6 +164,24 @@ def test_update_readme_cache_busts_battle_images():
     assert 'src="assets/stats-dark.svg"' in out  # other images untouched
 
 
+@pytest.mark.parametrize("bad", ["not-a-date", "2026-10-09T99:00", 12345])
+def test_corrupt_last_move_timestamp_is_ignored_not_fatal(bad):
+    s = {**initial_state(), "last_move_at": {"ash": bad}}
+    state, _ = play_turn(s, "battle|foul-play", "ash", NOW, random.Random(1), rules=fixed(5))
+    assert state["foe_hp"] == 95
+    assert state["last_move_at"]["ash"] == NOW.isoformat()  # self-heals
+
+
+def test_naive_last_move_timestamp_is_treated_as_utc():
+    recent = (NOW - timedelta(seconds=10)).replace(tzinfo=None).isoformat()
+    with pytest.raises(RateLimited):
+        play_turn({**initial_state(), "last_move_at": {"ash": recent}}, "battle|foul-play", "ash", NOW,
+                  random.Random(1), rules=fixed(5))
+    old = (NOW - timedelta(minutes=5)).replace(tzinfo=None).isoformat()
+    play_turn({**initial_state(), "last_move_at": {"ash": old}}, "battle|foul-play", "ash", NOW,
+              random.Random(1), rules=fixed(5))
+
+
 def test_exempt_trainer_skips_cooldown():
     s, _ = play_turn(initial_state(), "battle|foul-play", "owner", NOW, random.Random(1), rules=fixed(5))
     play_turn(s, "battle|foul-play", "owner", NOW + timedelta(seconds=5), random.Random(1), rules=fixed(5),
